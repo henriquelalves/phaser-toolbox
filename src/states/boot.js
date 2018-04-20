@@ -17,22 +17,22 @@ class Boot extends Phaser.State {
 	create() {
 		this.game.input.maxPointers = 1;
 
-		this.game.scale.scaleMode = Phaser.ScaleManager.USER_SCALE;
+		this.game.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
 		this.game.scale.pageAlignHorizontally = true;
 		this.game.scale.pageAlignVertically = true;
 
-		this.initGlobalVariables();
+		// this.initGlobalVariables();
 
 		// Setup resolution
 		let settings = {
 			defaultWidth: 1280,
 			defaultHeight: 800,
-			useStretchThreshold: true,
+			useStretchThreshold: false,
 			stretchThresholdWidth: 1420,
 			stretchThresholdHeight: 960
 		};
 
-		this.setupResolutionSettings(settings);
+		// this.setupResolutionSettings(settings);
 
 		this.game.state.start('preloader');
 	}

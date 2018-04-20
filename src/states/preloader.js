@@ -2,18 +2,13 @@ class Preloader extends Phaser.State {
 
 	constructor() {
 		super();
-		this.asset = null;
 		this.ready = false;
 	}
 
 	create() {
-		// Loading bar?
-		this.asset = this.game.add.sprite(this.game.width * 0.5 - 110, this.game.height * 0.5 - 10, 'preloader');
 	}
 
 	preload() {
-		this.load.image('background', 'assets/resolution_template.png');
-
 		//Setup loading and its events
 		this.load.onLoadComplete.addOnce(this.onLoadComplete, this);
 
@@ -24,7 +19,8 @@ class Preloader extends Phaser.State {
 
 	update() {
 		if (this.ready) {
-			this.game.state.start('menu');
+			document.getElementById("html-select").disabled = false;
+			this.game.state.start('scene_card');
 		}
 	}
 

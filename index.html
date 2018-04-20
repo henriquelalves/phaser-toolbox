@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <title>Boilerplate</title>
@@ -7,12 +8,12 @@
   <!-- Cordova code; feel free to delete this -->
   <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
   <script type="text/javascript" charset="utf-8">
-    function onLoad(){
-    document.addEventListener("deviceready", onDeviceReady, false);
+    function onLoad() {
+      document.addEventListener("deviceready", onDeviceReady, false);
     }
 
     function onDeviceReady() {
-    AndroidFullScreen.immersiveMode();
+      AndroidFullScreen.immersiveMode();
     }
 
   </script>
@@ -25,14 +26,21 @@
     url('assets/.ttf') format('opentype');
     }*/
   </style>
-  
+
   <!-- build:css main.min.css -->
   <link rel="stylesheet" href="css/main.css">
   <!-- /build -->
-  
+
 </head>
 
 <body onload="onLoad()">
+
+  <select id="html-select" disabled="true" onchange="change_scene(this.value)">
+    <option value="scene_card">Card</option>
+    <option value="scene_custom_button">Custom Button</option>
+    <option value="scene_glitch_sprite">Glitch Sprite</option>
+    <option value="scene_paper_letter">Paper Letter Sprite</option>
+  </select>
 
   <div id="game_canvas" class="game"></div>
 
@@ -43,7 +51,7 @@
   <!-- build:js phaser.min.js -->
   <script src="node_modules/phaser/build/phaser.min.js"></script>
   <!-- /build -->
-  
+
   <script src="plugins/phaser-state-transition.min.js"></script>
   <script src="plugins/phaser-input.min.js"></script>
 
@@ -52,5 +60,5 @@
   <!-- /build -->
 
 </body>
-</html>
 
+</html>
