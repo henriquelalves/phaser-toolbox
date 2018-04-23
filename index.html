@@ -35,11 +35,13 @@
 
 <body onload="onLoad()">
 
-  <select id="html-select" disabled="true" onchange="change_scene(this.value)">
+  <select id="html-select" disabled="true" onchange="change_scene(this.value)" onready="change_scene(this.value)">
     <option value="scene_card">Card</option>
     <option value="scene_custom_button">Custom Button</option>
     <option value="scene_glitch_sprite">Glitch Sprite</option>
     <option value="scene_paper_letter">Paper Letter Sprite</option>
+    <option value="scene_stretching_element">Stretching Element</option>
+    <option value="scene_counter">Counter</option>
   </select>
 
   <div id="game_canvas" class="game"></div>

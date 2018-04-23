@@ -1,7 +1,7 @@
 class SpecialCanvas extends Phaser.Sprite {
 
     constructor(game,x,y,sprite) {
-	super(game,x,y,'THE_AMAZING_INVISIBLE_SPRITE_BECAUSE_CHROME_SUCKS');
+	super(game,x,y);
 	
 	this.game = game;
 	this.sprite = sprite;

@@ -55,14 +55,8 @@ class Counter extends Phaser.Sprite {
 
         for (var i = 0; i < 4; i++) {
             for (var j = 0; j < 10; j++) {
-                var txt = this.game.add.text(0, -j * this.slot_offset, j, { font: '50px SquareCustom' });
+                var txt = this.game.add.text(0, -j * this.slot_offset, j, { font: '50px Arial' });
                 txt.anchor.set(0.5);
-                this.slots[i].addChild(txt);
-            }
-            for (var j = 10; j < 28; j++) {
-                var txt = this.game.add.text(0, -j * this.slot_offset, j, { font: '50px SquareCustom', fill: '#ff2222' });
-                txt.anchor.set(0.5);
-                txt.scale.setTo(0.7, 1.0);
                 this.slots[i].addChild(txt);
             }
         }

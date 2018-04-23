@@ -38,6 +38,8 @@ class StretchingElement extends Phaser.Sprite {
 
 		this.on_drop = new Phaser.Signal();
 		this.on_pop = new Phaser.Signal();
+
+		this.game.add.existing(this);
 	}
 
 	disable() {
@@ -45,6 +47,7 @@ class StretchingElement extends Phaser.Sprite {
 	}
 
 	enable() {
+		this.distortable = true;
 		this.render_sprite.inputEnabled = true;
 		this.render_sprite.input.useHandCursor = true;
 		this.render_sprite.input.pixelPerfectOver = true;
@@ -58,8 +61,7 @@ class StretchingElement extends Phaser.Sprite {
 				this.x = this.game.input.x + this.mouse_center.x;
 				this.y = this.game.input.y + this.mouse_center.y;
 				this.scale.x = 1 + Phaser.Point.distance(this.mouse_anchor, new Phaser.Point(this.game.input.x, this.game.input.y)) * 0.015;
-
-
+				
 				this.render_sprite.angle = -Phaser.Math.radToDeg(this.mouse_angle) + this.image_angle;
 				this.angle = Phaser.Math.radToDeg(this.mouse_angle);
 			}
@@ -99,6 +101,8 @@ class StretchingElement extends Phaser.Sprite {
 			this.wobble(false);
 			this.update_distort = false;
 		} else if (this.update_pos) {
+			this.tx = this.x;
+			this.ty = this.y;
 			this.update_pos = false;
 			this.on_drop.dispatch(this, this.position);
 		}
