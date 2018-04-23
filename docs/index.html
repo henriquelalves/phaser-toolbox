@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Boilerplate</title>
+
+  <!-- Cordova code; feel free to delete this -->
+  <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+  <script type="text/javascript" charset="utf-8">
+    function onLoad() {
+      document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    function onDeviceReady() {
+      AndroidFullScreen.immersiveMode();
+    }
+
+  </script>
+
+  <!-- Loading any fonts here -->
+  <style>
+    /*@font-face {
+    font-family: '';
+    src: url('assets/.woff') format('woff'),
+    url('assets/.ttf') format('opentype');
+    }*/
+  </style>
+
+  <link rel="stylesheet" href="main.min.css">
+
+</head>
+
+<body onload="onLoad()">
+
+  <select id="html-select" disabled="true" onchange="change_scene(this.value)" onready="change_scene(this.value)">
+    <option value="scene_card">Card</option>
+    <option value="scene_custom_button">Custom Button</option>
+    <option value="scene_glitch_sprite">Glitch Sprite</option>
+    <option value="scene_paper_letter">Paper Letter Sprite</option>
+    <option value="scene_stretching_element">Stretching Element</option>
+    <option value="scene_counter">Counter</option>
+  </select>
+
+  <div id="game_canvas" class="game"></div>
+
+  <script src="phaser.min.js"></script>
+
+  <script src="plugins/phaser-state-transition.min.js"></script>
+  <script src="plugins/phaser-input.min.js"></script>
+
+  <script src="bundle.min.js"></script>
+
+</body>
+
+</html>
